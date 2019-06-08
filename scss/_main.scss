@@ -1,0 +1,140 @@
+.container {
+  max-width: 962px;
+  margin: 32px auto;
+  padding: 0 10px;
+
+  &__header {
+    font-size: 22px;
+    line-height: 34px;
+    font-weight: normal;
+    color: #1d1d1d;
+    margin: 30px 0 16px;
+  }
+}
+
+.search {
+  &__input {
+    padding: 8px 10px 8px 36px;
+    width: 100%;
+    height: 48px;
+    border: none;
+    border-bottom: 1px solid #e0e0e0;
+    box-sizing: border-box;
+    color: #262626;
+    background: url(images/search.svg) left 2px bottom 13px no-repeat;
+    transition: border-color .4s;
+    outline: none;
+  }
+
+  &__input:hover {
+    border-color: #8a8a8a;
+  }
+
+  &__input::placeholder {
+    color: #828282;
+  }
+}
+
+.main-delivery {
+  display: none;
+  margin-top: 24px;
+  justify-content: space-between;
+  box-sizing: border-box;
+
+  &__time p,
+  &__destination p {
+    font-size: 15px;
+    line-height: 30px;
+  }
+
+  &__time-button {
+    box-sizing: border-box;
+    width: 65px;
+    height: 40px;
+    background-color: #fff;
+    font-size: 14px;
+    line-height: 24px;
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+
+  &__destination-form {
+    box-sizing: border-box;
+    width: 230px;
+    height: 40px;
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    outline: none;
+    padding: 8px;
+  }
+}
+
+.food-container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, 308px);
+  grid-gap: 19px;
+}
+
+.food-item {
+  height: 366px;
+  width: 308px;
+  cursor: pointer;
+
+  &__image {
+    height: 256px;
+    width: 100%;
+    transition: all .5s;
+    border-radius: 3px;
+  }
+
+  &:hover &__image {
+    transform: translateY(-5px);
+  }
+
+  &__header {
+    font-weight: normal;
+    margin-top: 16px;
+  }
+
+  &__cuisine-item {
+    font-size: 14px;
+    line-height: 21px;
+    color: #626262;
+    transition: color .2s;
+  }
+
+  &__cuisine-item:hover {
+    color: #49A144;
+  }
+
+  &__delivery-time {
+    font-size: 14px;
+    line-height: 21px; 
+  }
+}
+
+@media (max-width: 1023px) {
+  .container {
+    max-width: 635px;
+  }
+  
+  .food-container {
+    grid-template-columns: repeat(2, 308px);
+  }
+}
+
+@media (max-width: 639px) {
+  .container {
+    max-width: 310px;
+  }
+
+  .main-delivery {
+    display: flex;
+  }
+
+  .food-container {
+    grid-template-columns: repeat(1, 308px);
+  }
+}
